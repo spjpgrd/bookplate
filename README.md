@@ -66,6 +66,37 @@ npm run build-storybook
 
 This creates a static build of Storybook for deployment.
 
+## Chromatic
+
+This project is configured with Chromatic for automated visual testing and component deployment. Chromatic automatically captures visual snapshots of your components and detects visual regressions on every push.
+
+### How It Works
+
+- **Automated Testing**: Chromatic runs automatically via GitHub Actions on every push
+- **Visual Snapshots**: Captures screenshots of your Storybook components
+- **Regression Detection**: Alerts you to unexpected visual changes
+- **Change Review**: Provides a visual diff interface for reviewing changes
+
+### Running Chromatic Locally
+
+You can run Chromatic locally to test changes before pushing:
+
+```zsh
+npm run chromatic
+```
+
+This will capture snapshots and upload them to your Chromatic dashboard.
+
+### Viewing Results
+
+After each push, visit your Chromatic dashboard to:
+- Review visual changes
+- Approve or reject visual updates
+- Track component history
+- Collaborate with your team
+
+The GitHub Actions workflow automatically handles the CI/CD integration, so visual testing happens seamlessly in your development workflow.
+
 ***
 
 For more details, see the documentation or open an issue if you need help.
