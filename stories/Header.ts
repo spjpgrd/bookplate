@@ -1,9 +1,23 @@
-import { html } from 'lit';
+import { html, TemplateResult } from 'lit';
 
 import { Button } from './Button';
 import './header.css';
 
-export const Header = ({ user, onLogin, onLogout, onCreateAccount }) => html`
+export interface HeaderProps {
+  user?: {
+    name: string;
+  } | null;
+  onLogin?: (() => void) | undefined;
+  onLogout?: (() => void) | undefined;
+  onCreateAccount?: (() => void) | undefined;
+}
+
+export const Header = ({
+  user,
+  onLogin,
+  onLogout,
+  onCreateAccount
+}: HeaderProps): TemplateResult => html`
   <header>
     <div class="storybook-header">
       <div>
@@ -27,16 +41,16 @@ export const Header = ({ user, onLogin, onLogout, onCreateAccount }) => html`
       </div>
       <div>
         ${user
-          ? Button({ size: 'small', onClick: onLogout, label: 'Log out' })
+          ? Button({ size: 'small', onClick: onLogout || undefined, label: 'Log out' })
           : html`${Button({
               size: 'small',
-              onClick: onLogin,
+              onClick: onLogin || undefined,
               label: 'Log in',
             })}
             ${Button({
               primary: true,
               size: 'small',
-              onClick: onCreateAccount,
+              onClick: onCreateAccount || undefined,
               label: 'Sign up',
             })}`}
       </div>

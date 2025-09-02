@@ -1,15 +1,29 @@
-import { html } from 'lit';
+import { html, TemplateResult } from 'lit';
 
 import { Header } from './Header';
 import './page.css';
 
-export const Page = ({ user, onLogin, onLogout, onCreateAccount }) => html`
+export interface PageProps {
+  user?: {
+    name: string;
+  } | null;
+  onLogin?: (() => void) | undefined;
+  onLogout?: (() => void) | undefined;
+  onCreateAccount?: (() => void) | undefined;
+}
+
+export const Page = ({
+  user,
+  onLogin,
+  onLogout,
+  onCreateAccount
+}: PageProps): TemplateResult => html`
   <article>
     ${Header({
-      user,
-      onLogin,
-      onLogout,
-      onCreateAccount,
+      user: user || null,
+      onLogin: onLogin || undefined,
+      onLogout: onLogout || undefined,
+      onCreateAccount: onCreateAccount || undefined,
     })}
 
     <section class="storybook-page">
