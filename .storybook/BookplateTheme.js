@@ -1,14 +1,34 @@
 import { create } from 'storybook/theming';
 
 export default create({
-  base: 'light',
-
-  // Typography
-  fontBase: '"EB Garamond", serif',
+  base: 'dark',
+  colorPrimary: 'red',
+  colorSecondary:'lime',
+  appBg: 'red',
+  appContentBg: 'red',
+  appPreviewBg: 'red',
+  appBorderColor: 'purple',
+  appBorderRadius: 99,
+  fontBase: 'Helvetica',
   fontCode: '"JetBrains Mono", monospace',
-
+  textColor: 'orange',
+  textInverseColor: 'white',
+  textMutedColor: 'grey',
+  barTextColor: 'green',
+  barHoverColor: 'blue',
+  barSelectedColor: 'yellow',
+  barBg: 'black',
+  buttonBg: 'green',
+  buttonBorder: 'grey',
+  booleanBg: 'black',
+  booleanSelectedBg: 'white',
+  inputBg: 'black',
+  inputBorder: 'grey',
+  inputTextColor: 'white',
+  inputBorderRadius: 1,
   brandTitle: 'Bookplate',
   brandUrl: 'https://68b627f48974895b1004bad0-wosxwdfvfy.chromatic.com',
   brandImage: '/stories/assets/bookplate-brand-image.png',
   brandTarget: '_self',
+  gridCellSize: 16,
 });
