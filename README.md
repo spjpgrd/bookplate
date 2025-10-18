@@ -30,7 +30,7 @@ A timeless way to build websites. For the thoughtful artist.
 
 ## TypeScript
 
-This project is configured with TypeScript for better type safety and developer experience.
+This project is configured with TypeScript for better type safety and developer experience 👍
 
 ### TypeScript Commands
 
